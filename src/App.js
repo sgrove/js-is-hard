@@ -3,22 +3,22 @@ import React from "react";
 import { RelayEnvironmentProvider } from "react-relay/hooks";
 import RelayEnvironment from "./RelayEnvironment";
 import Header from "./Header";
-import CommentNotificationSubscription from "./CommentNotification";
 import PostsQuery from "./Posts";
 import ReplyMutation from "./Reply";
+import CommentNotificationSubscription from "./CommentNotification";
 
 function App() {
   return (
     <>
       <Header />
-      <section className="subscription">
-        <CommentNotificationSubscription repoOwner={null} repoName={null} />
-      </section>
       <section className="query">
-        <PostsQuery name={null} owner={null} labels={null} createdBy={null} />
+        <PostsQuery owner={null} name={null} createdBy={null} />
       </section>
       <section className="mutation">
         <ReplyMutation subjectId={null} body={null} />
+      </section>
+      <section className="subscription">
+        <CommentNotificationSubscription repoOwner={null} repoName={null} />
       </section>
     </>
   );

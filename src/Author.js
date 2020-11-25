@@ -11,7 +11,7 @@ export default function Author(props) {
   const data = useFragment(
     graphql`
       fragment Author_fragment on GitHubActor {
-        avatarUrl(size: 10)
+        avatarUrl(size: 50)
         login
         url
       }

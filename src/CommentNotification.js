@@ -58,8 +58,8 @@ export default function CommentNotificationSubscription(props) {
   const dataEl = subscriptionResult?.data ? (
     <div className="data-box">
       <h3>Data for CommentNotificationSubscription</h3>
-      <pre>{stringifyRelayData(subscriptionResult.data)}</pre>
-      <h4>CommentUses</h4>
+
+      <h4>CommentUses <LocationNode /></h4>
       {commentUses}
     </div>
   ) : (

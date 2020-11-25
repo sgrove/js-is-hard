@@ -48,14 +48,7 @@ export default function ReplyMutation(props) {
 
   const commentUses = <Comment  comment={mutationResult?.data?.gitHub?.addComment?.commentEdge?.node} />;
 
-  const dataEl = mutationResult?.data ? (
-    <div className="data-box">
-      <h3>Data for ReplyMutation</h3>
-      <pre>{stringifyRelayData(mutationResult.data)}</pre>
-      <h4>CommentUses</h4>
-      {commentUses}
-    </div>
-  ) : null;
+
 
   const primaryError = mutationResult?.errors?.[0];
 
@@ -94,12 +87,11 @@ export default function ReplyMutation(props) {
 
   return (
     <div>
-      <h3>ReplyMutation <LocationNote location={'Reply.js:<Reply>'} /></h3>
+      <h3>ReplyMutation <LocationNote /></h3>
       {formEl}
       {actionButton}
       {loadingEl}
-      {dataEl}
-      {errorEl}
+{errorEl}
     </div>
   );
 };

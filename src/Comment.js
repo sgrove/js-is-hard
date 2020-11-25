@@ -12,12 +12,12 @@ export default function Comment(props) {
   const data = useFragment(
     graphql`
       fragment Comment_fragment on GitHubIssueComment {
-        id
-        url
-        body
         author {
           ...Author_fragment
         }
+        bodyHTML
+        id
+        url
       }
     `,
     props.comment,
@@ -30,7 +30,7 @@ export default function Comment(props) {
       <div className="data-box">
         <h3>Data for Comment <LocationNote /></h3>
         <pre>{stringifyRelayData(data)}</pre>
-        <h4>AuthorUses</h4>
+        <h4>AuthorUses <LocationNode /></h4>
         {authorUses}
       </div>
     </>

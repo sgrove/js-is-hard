@@ -261,7 +261,7 @@ header {
 
 /* toast */
 /* The snackbar - position it at the bottom and in the middle of the screen */
-.snackbar {
+div.snackbar {
   visibility: hidden; /* Hidden by default. Visible on click */
   min-width: 250px; /* Set a default minimum width */
   margin-left: -125px; /* Divide value of min-width by 2 */
@@ -277,7 +277,7 @@ header {
 }
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
-.snackbar.show {
+div.snackbar.show {
   visibility: visible; /* Show the snackbar */
   /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
   However, delay the fade out process for 2.5 seconds */
@@ -328,4 +328,28 @@ header {
     bottom: 0;
     opacity: 0;
   }
+}
+
+[data-tooltip] {
+  display: inline-block;
+}
+
+[data-tooltip]:before {            
+  position : absolute;
+  content : attr(data-tooltip);
+  opacity : 0;
+  background-color: white;
+  box-shadow: 3px 2px 4px 2px #ccc;
+  margin-left: 15px;
+  margin-top: -20px;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+[data-tooltip]:hover:before {        
+  opacity : 1;
+}
+
+[data-tooltip]:not([data-tooltip-persistent]):before {
+  pointer-events: none;
 }
