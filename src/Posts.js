@@ -54,7 +54,7 @@ export const PaginatedRepositoryIssuesContainer = createPaginationContainer(
         number
         title
         url
-        content: body
+        content2: body
         ...Posts_issuesForPaginatedComments @arguments(count: $count, cursor: $cursor)
       }
     }
