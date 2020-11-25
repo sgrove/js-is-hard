@@ -4,6 +4,7 @@ import { RelayEnvironmentProvider } from "react-relay/hooks";
 import RelayEnvironment from "./RelayEnvironment";
 import Header from "./Header";
 import PostsQuery from "./Posts";
+import ReplyMutation from "./Reply";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
       <Header />
       <section className="query">
         <PostsQuery name={null} owner={null} labels={null} createdBy={null} />
+      </section>
+      <section className="mutation">
+        <ReplyMutation subjectId={null} body={null} />
       </section>
     </>
   );
